@@ -8,6 +8,10 @@ public class MainStartClass {
 			System.out.println(i + " :is the current run");
 			
 		}
+		
+		DummyCommitClass test = new DummyCommitClass();
+		test.setTestString("this is a simple test to ...");
+		System.out.println(test.getTestString());
 	}
 }
 
