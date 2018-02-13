@@ -12,6 +12,10 @@ public class MainStartClass {
 		DummyCommitClass test = new DummyCommitClass();
 		test.setTestString("this is a simple test to ...");
 		System.out.println(test.getTestString());
+		
+		System.out.println("          ");
+		System.out.println("This string only apears if the last push was successful");
+		System.out.println("          ");
 	}
 }
 
