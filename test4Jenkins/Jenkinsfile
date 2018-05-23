@@ -1,10 +1,11 @@
-node {
-	stage 'checkout' 
-		git url : 'https://github.com/GJohannes/baJenkins'
-    stage 'Stage 1: Compile'
-        echo 'Hello World'
-    stage 'Stage 2: Testing'
-        echo 'Done Testing'
-    stage 'Stage 3: SCM Poll Test'
-    	echo 'SCM Pool Success' 
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+               git url : 'https://github.com/GJohannes/baJenkins'
+            }
+        }
+    }
 }
