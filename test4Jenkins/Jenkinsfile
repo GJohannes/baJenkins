@@ -1,4 +1,7 @@
 node {
+	stage 'checkout' {
+		git url : 'https://github.com/GJohannes/baJenkins'
+	{
     stage 'Stage 1: Compile'
         echo 'Hello World'
     stage 'Stage 2: Testing'
