@@ -11,4 +11,8 @@ public class DummyCommitClass {
 	public void setTestString(String testString) {
 		this.testString = testString;
 	}
+	
+	private void doEmptyStuff() {
+		System.out.println("Done empty stuff");
+	}
 }
