@@ -1,0 +1,6 @@
+node {
+    stage 'Stage 1: Compile'
+        echo 'Hello World'
+    stage 'Stage 2: Testing'
+        echo 'Done Testing'
+}
