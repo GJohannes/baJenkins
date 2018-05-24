@@ -13,7 +13,9 @@ pipeline {
              }
              steps {
              	sh "mvn -version"
-             	sh "mvn -f /test4Jenkins/pom.xml"
+             	def mvnHome = tool 'M3'
+             	sh "{mvnHome}/bin/mvn compile"
+             	
              }
         }
     }
