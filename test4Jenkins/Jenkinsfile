@@ -9,7 +9,9 @@ pipeline {
         }
          stage('Build') {
             steps {
-                sh "${mvnHome}/bin/mvn compile" 
+            	withMaven(jdk: 'jdk8', maven: 'maven3') {
+            		sh "mvn make"
+        		}
             }
         }
     }
