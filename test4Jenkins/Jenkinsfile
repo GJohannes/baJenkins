@@ -13,6 +13,7 @@ pipeline {
              }
              steps {
              	sh "mvn -version"
+             	sh "mvn -f \test4Jenkins\pom.xml"
              }
         }
     }
