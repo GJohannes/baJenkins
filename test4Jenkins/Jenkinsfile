@@ -1,8 +1,13 @@
 @Library('jenkins-pipeline-library') _
 
 pipeline {
+	   environment {
+     		def server = Artifactory.server 'artifactory'
+    		def rtMaven = Artifactory.newMavenBuild()
+    		def buildInfo = Artifactory.newBuildInfo()
+   }
+   
     agent any
-	
 
     stages {
 
@@ -14,10 +19,7 @@ pipeline {
         }
         stage('Configure artifactory') {
         	steps {
-        		def server = Artifactory.server 'artifactory'
-    			def rtMaven = Artifactory.newMavenBuild()
-    			def buildInfo = Artifactory.newBuildInfo()
-        
+        		
             	rtMaven.tool = 'maven3'
             	rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
             	rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
