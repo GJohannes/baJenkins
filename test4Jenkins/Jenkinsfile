@@ -19,11 +19,12 @@ pipeline {
         }
         stage('Configure artifactory') {
         	steps {
-        		
-            	rtMaven.tool = 'maven3'
-            	rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
-            	rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
-            	buildInfo.env.capture = true
+        		script {
+            		rtMaven.tool = 'maven3'
+            		rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
+            		rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
+            		buildInfo.env.capture = true
+            	}
             }
         }
         stage('Build') {
