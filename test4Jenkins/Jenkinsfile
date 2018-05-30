@@ -13,7 +13,7 @@ pipeline {
              }
              steps {
              	sh "mvn -version"
-             	sh "mvn -f /test4Jenkins/pom.xml compile" 
+             	sh "mvn -f ./test4Jenkins/pom.xml compile" 
              	
              }
         }
