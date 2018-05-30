@@ -1,10 +1,12 @@
 pipeline {
     agent any
-	def server = Artifactory.server 'artifactory'
-    def rtMaven = Artifactory.newMavenBuild()
-    def buildInfo = Artifactory.newBuildInfo()
+	
 
     stages {
+    	def server = Artifactory.server 'artifactory'
+    	def rtMaven = Artifactory.newMavenBuild()
+    	def buildInfo = Artifactory.newBuildInfo()
+    
         stage('checkout') {
             steps {
                git url : 'https://github.com/GJohannes/baJenkins'
@@ -17,6 +19,8 @@ pipeline {
             buildInfo.env.capture = true
         }
         stage('Build') {
+           	
+           	
            	agent {
 				label "maven-3.5-jdk-8"
              }
