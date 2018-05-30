@@ -5,9 +5,7 @@ pipeline {
 	
 
     stages {
-    	def server = Artifactory.server 'artifactory'
-    	def rtMaven = Artifactory.newMavenBuild()
-    	def buildInfo = Artifactory.newBuildInfo()
+
     
         stage('checkout') {
             steps {
@@ -15,6 +13,10 @@ pipeline {
             }
         }
         stage('Configure artifactory') {
+        	def server = Artifactory.server 'artifactory'
+    		def rtMaven = Artifactory.newMavenBuild()
+    		def buildInfo = Artifactory.newBuildInfo()
+        
             rtMaven.tool = 'maven3'
             rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
             rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
