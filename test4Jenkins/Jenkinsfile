@@ -2,13 +2,10 @@
 
 node {
 	   
-     		def server = Artifactory.server 'artifactory'
-    		def rtMaven = Artifactory.newMavenBuild()
-    		def buildInfo = Artifactory.newBuildInfo()
+   	def server = Artifactory.server 'artifactory'
+   	def rtMaven = Artifactory.newMavenBuild()
+   	def buildInfo = Artifactory.newBuildInfo()
    
-   
-    agent any
-
     stages {
 
     
