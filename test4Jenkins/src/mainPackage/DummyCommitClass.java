@@ -15,5 +15,6 @@ public class DummyCommitClass {
 	private void doEmptyStuff() {
 		System.out.println("Done empty stuff");
 		System.out.println("asasdaw");
+		System.out.println("dgdgdfghfghfgh");
 	}
 }
