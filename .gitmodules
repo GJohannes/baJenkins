@@ -1,0 +1,3 @@
+[submodule "LocalSubModuleRepo"]
+	path = LocalSubModuleRepo
+	url = https://github.com/GJohannes/baJenkins
